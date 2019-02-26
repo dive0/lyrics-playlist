@@ -18,9 +18,27 @@
   </head>
   <body>
     
-    <div class="container-fluid">
-      <!--<h1>Results</h1>-->
-
+    <div class="container">
+      <div class="jumbotron">
+        <h1><%= @user_playlist.name %></h1>
+        <h2><%= @user_playlist.user %></h2>
+        <p><%= @user_playlist.playlist_id %></p>
+      </div>
+      
+      <% @user_playlist.songs.each do |song| %>
+        <div class='row'>
+          <div class='col-sm-6'>
+            <h1><%= song.name %></h1>
+            <h3><%= song.artist %></h3>
+            <% song.lyrics.each do |line| %>
+              <p><%= line %></p>
+            <% end %>
+          </div>
+          <div class='col-sm-6'>
+            <img src=<%= song.album_img %>>
+          </div>
+        </div>
+      <% end %>
     </div>
     
   </body>

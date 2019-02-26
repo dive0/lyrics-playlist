@@ -2,7 +2,7 @@
 # require 'rspotify'
 require 'pp'
 
-RSpotify.authenticate("13777d47d2c941dab342071d9493d1bd", "fce82e12c6b647da9c3d4da9f5d52c54")
+RSpotify.authenticate(ENV["SPOTIFY_ID"], ENV["SPOTIFY_SECRET"])
 
 # def get_lyrics(song,artist)
 #     fetcher = Lyricfy::Fetcher.new
